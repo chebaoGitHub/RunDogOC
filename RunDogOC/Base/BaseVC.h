@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Define.h"
+
 @interface BaseVC : UIViewController
 
 @end

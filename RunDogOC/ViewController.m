@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "MapVC.h"
+
 @interface ViewController ()
 
 @end
@@ -16,7 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    MapVC * vc = [[MapVC alloc] init];
+    
+    UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
+    window.rootViewController = vc;
 }
 
 - (void)didReceiveMemoryWarning {
