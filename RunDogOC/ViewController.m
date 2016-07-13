@@ -20,9 +20,9 @@
     [super viewDidLoad];
     
     MapVC * vc = [[MapVC alloc] init];
-    
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:vc];
     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
-    window.rootViewController = vc;
+    window.rootViewController = nav;
 }
 
 - (void)didReceiveMemoryWarning {

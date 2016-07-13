@@ -75,6 +75,12 @@
 		6E579EE11D2E35060058D0E7 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E579EE01D2E35060058D0E7 /* BaseVC.m */; };
 		6E579EE21D2E35060058D0E7 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E579EE01D2E35060058D0E7 /* BaseVC.m */; };
 		6E579EE31D2E35060058D0E7 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E579EE01D2E35060058D0E7 /* BaseVC.m */; };
+		6E7B82041D34838F007DA749 /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82031D34838F007DA749 /* MyVC.m */; };
+		6E7B82051D34838F007DA749 /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82031D34838F007DA749 /* MyVC.m */; };
+		6E7B82061D34838F007DA749 /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82031D34838F007DA749 /* MyVC.m */; };
+		6E7B82091D34C125007DA749 /* MyPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82081D34C125007DA749 /* MyPersonCell.m */; };
+		6E7B820A1D34C125007DA749 /* MyPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82081D34C125007DA749 /* MyPersonCell.m */; };
+		6E7B820B1D34C125007DA749 /* MyPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B82081D34C125007DA749 /* MyPersonCell.m */; };
 		6ECD7E201D2E493F00CD80AF /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECD7E1F1D2E493F00CD80AF /* BaiduMapAPI_Location.framework */; };
 		6ECD7E211D2E493F00CD80AF /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECD7E1F1D2E493F00CD80AF /* BaiduMapAPI_Location.framework */; };
 		6ECD7E221D2E493F00CD80AF /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECD7E1F1D2E493F00CD80AF /* BaiduMapAPI_Location.framework */; };
@@ -161,6 +167,10 @@
 		6E579EDF1D2E35060058D0E7 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		6E579EE01D2E35060058D0E7 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		6E579EE41D2E364F0058D0E7 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		6E7B82021D34838F007DA749 /* MyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVC.h; sourceTree = "<group>"; };
+		6E7B82031D34838F007DA749 /* MyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVC.m; sourceTree = "<group>"; };
+		6E7B82071D34C125007DA749 /* MyPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPersonCell.h; sourceTree = "<group>"; };
+		6E7B82081D34C125007DA749 /* MyPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPersonCell.m; sourceTree = "<group>"; };
 		6ECD7E1F1D2E493F00CD80AF /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		6ECD7E231D2F8C7300CD80AF /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +257,7 @@
 		6E03C66B1D2E401F002EF369 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6E7B82011D339C68007DA749 /* My */,
 				6E579ECC1D2E2F140058D0E7 /* Map */,
 			);
 			name = Controllers;
@@ -363,6 +374,17 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		6E7B82011D339C68007DA749 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				6E7B82021D34838F007DA749 /* MyVC.h */,
+				6E7B82031D34838F007DA749 /* MyVC.m */,
+				6E7B82071D34C125007DA749 /* MyPersonCell.h */,
+				6E7B82081D34C125007DA749 /* MyPersonCell.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		6ECD7E1E1D2E491B00CD80AF /* BaiduMapSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +464,7 @@
 				TargetAttributes = {
 					6E579E721D2E2B720058D0E7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5KJ36QDNTM;
 					};
 					6E579E8B1D2E2B720058D0E7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -514,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7B82041D34838F007DA749 /* MyVC.m in Sources */,
 				6E03C6621D2E3F19002EF369 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6E579E7E1D2E2B720058D0E7 /* ViewController.m in Sources */,
 				6E03C65C1D2E3F19002EF369 /* MASViewConstraint.m in Sources */,
@@ -522,6 +546,7 @@
 				6E579EE11D2E35060058D0E7 /* BaseVC.m in Sources */,
 				6E03C6651D2E3F19002EF369 /* View+MASAdditions.m in Sources */,
 				6E03C64D1D2E3F19002EF369 /* MASCompositeConstraint.m in Sources */,
+				6E7B82091D34C125007DA749 /* MyPersonCell.m in Sources */,
 				6E03C6591D2E3F19002EF369 /* MASViewAttribute.m in Sources */,
 				6E03C6531D2E3F19002EF369 /* MASConstraintMaker.m in Sources */,
 				6E03C65F1D2E3F19002EF369 /* NSArray+MASAdditions.m in Sources */,
@@ -538,10 +563,12 @@
 			files = (
 				6E03C6631D2E3F19002EF369 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6E03C65D1D2E3F19002EF369 /* MASViewConstraint.m in Sources */,
+				6E7B82051D34838F007DA749 /* MyVC.m in Sources */,
 				6E03C64E1D2E3F19002EF369 /* MASCompositeConstraint.m in Sources */,
 				6E03C6601D2E3F19002EF369 /* NSArray+MASAdditions.m in Sources */,
 				6E579EE21D2E35060058D0E7 /* BaseVC.m in Sources */,
 				6E579E911D2E2B720058D0E7 /* RunDogOCTests.m in Sources */,
+				6E7B820A1D34C125007DA749 /* MyPersonCell.m in Sources */,
 				6E03C6571D2E3F19002EF369 /* MASLayoutConstraint.m in Sources */,
 				6E579ED11D2E2F3B0058D0E7 /* MapVC.mm in Sources */,
 				6E03C6691D2E3F19002EF369 /* ViewController+MASAdditions.m in Sources */,
@@ -558,10 +585,12 @@
 			files = (
 				6E03C6641D2E3F19002EF369 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6E03C65E1D2E3F19002EF369 /* MASViewConstraint.m in Sources */,
+				6E7B82061D34838F007DA749 /* MyVC.m in Sources */,
 				6E03C64F1D2E3F19002EF369 /* MASCompositeConstraint.m in Sources */,
 				6E03C6611D2E3F19002EF369 /* NSArray+MASAdditions.m in Sources */,
 				6E579EE31D2E35060058D0E7 /* BaseVC.m in Sources */,
 				6E579E9C1D2E2B720058D0E7 /* RunDogOCUITests.m in Sources */,
+				6E7B820B1D34C125007DA749 /* MyPersonCell.m in Sources */,
 				6E03C6581D2E3F19002EF369 /* MASLayoutConstraint.m in Sources */,
 				6E579ED21D2E2F3B0058D0E7 /* MapVC.mm in Sources */,
 				6E03C66A1D2E3F19002EF369 /* ViewController+MASAdditions.m in Sources */,

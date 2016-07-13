@@ -11,5 +11,6 @@
 #import "Define.h"
 
 @interface BaseVC : UIViewController
-
+-(void)setNavTitle:(NSString *)title andBackButtonImage:(NSString *)imageName;
+-(void)setNavTitle:(NSString *)title;
 @end

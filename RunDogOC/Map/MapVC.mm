@@ -7,7 +7,7 @@
 //
 
 #import "MapVC.h"
-
+#import "MyVC.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
@@ -25,11 +25,18 @@
 //#import < BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 @interface MapVC ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
+
+//map
 @property (nonatomic,strong) BMKMapView * mapView;
 @property (nonatomic,strong) BMKLocationService * locService;
-@property (nonatomic,strong) UISegmentedControl * segment;
 @property (nonatomic,strong) BMKUserLocation * currentLocation;
 @property (nonatomic,strong) BMKPointAnnotation * myNotation;
+
+//view
+@property (nonatomic,strong) UISegmentedControl * segment;
+@property (nonatomic,strong) UIView * searchView;
+@property (nonatomic,strong) UIView * myView;
+
 @end
 
 @implementation MapVC
@@ -37,6 +44,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    
+    //隐藏导航栏
+    [self.navigationController setNavigationBarHidden:YES];
     
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -63,6 +73,10 @@
 
 #pragma mark- view
 -(void)addView{
+    //添加segmentView
+    self.segment = [[UISegmentedControl alloc] initWithItems:@[@"狗狗",@"铲屎官"]];
+    self.segment.selectedSegmentIndex = 0;
+    self.segment.tintColor = [UIColor blackColor];
     [self.view addSubview:self.segment];
     [self.segment mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
@@ -70,16 +84,53 @@
         make.size.mas_equalTo(CGSizeMake(100, 30));
     }];
 
+    //添加searchView
+    self.searchView = [[UIView alloc] init];
+    [self.view addSubview:self.searchView];
+    [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.top.equalTo(self.view).with.offset(30);
+        make.right.equalTo(self.view).with.offset(-8);
+    }];
+    UIImageView * img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search"]];
+    [self.searchView addSubview:img];
+    [img mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.searchView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];
+    [button addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+    [self.searchView addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.searchView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    self.myView = [[UIView alloc] init];
+    [self.view addSubview:self.myView];
+    [self.myView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.top.equalTo(self.view).with.offset(30);
+        make.left.equalTo(self.view).with.offset(8);
+    }];
+    UIImageView * imgMy = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wo_s"]];
+    [self.myView addSubview:imgMy];
+    [imgMy mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.myView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    UIButton *mybutton=[UIButton buttonWithType:UIButtonTypeSystem];
+    [mybutton addTarget:self action:@selector(my) forControlEvents:UIControlEventTouchUpInside];
+    [self.myView addSubview:mybutton];
+    [mybutton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.myView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
 }
-
--(UISegmentedControl *)segment{
-    if (_segment) {
-        return _segment;
-    }else{
-        _segment = [[UISegmentedControl alloc] initWithItems:@[@"狗狗",@"铲屎官"]];
-        _segment.selectedSegmentIndex = 0;
-        return _segment;
-    }
+#pragma touch the button
+-(void)search{
+    NSLog(@"go to search");
+}
+-(void)my{
+    NSLog(@"go to my");
+    MyVC * vc = [[MyVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark- base map

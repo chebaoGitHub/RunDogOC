@@ -24,6 +24,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setNavTitle:(NSString *)title andBackButtonImage:(NSString *)imageName{
+    //页面标题
+    UILabel * label= [[UILabel alloc] init];
+    label.text = title;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(0, 0, 100, 30);
+    label.textColor = [UIColor whiteColor];
+    self.navigationItem.titleView = label;
+    
+    
+    //返回按钮
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame=CGRectMake(0, 0, 17, 17);
+    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+}
+
+-(void)setNavTitle:(NSString *)title{
+    //页面标题
+    UILabel * label= [[UILabel alloc] init];
+    label.text = title;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(0, 0, 100, 30);
+    label.textColor = [UIColor blackColor];
+    self.navigationItem.titleView = label;
+    
+    
+    //返回按钮
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame=CGRectMake(0, 0, 17, 17);
+    [button setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+-(void)back{
+     [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
